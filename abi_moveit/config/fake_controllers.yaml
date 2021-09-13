@@ -1,0 +1,24 @@
+controller_list:
+  - name: fake_L_leg_controller
+    type: $(arg execution_type)
+    joints:
+      - l_hip_roll_joint
+      - l_hip_yaw_joint
+      - l_hip_pitch_joint
+      - l_knee_pitch_joint
+      - l_ankle_pitch_joint
+      - l_ankle_roll_joint
+  - name: fake_R_leg_controller
+    type: $(arg execution_type)
+    joints:
+      - r_hip_roll_joint
+      - r_hip_yaw_joint
+      - r_hip_pitch_joint
+      - r_knee_pitch_joint
+      - r_ankle_pitch_joint
+      - r_ankle_roll_joint
+initial:  # Define initial robot poses.
+  - group: L_leg
+    pose: Home
+  - group: R_leg
+    pose: R_lowerCOM

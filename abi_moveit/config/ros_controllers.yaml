@@ -1,0 +1,111 @@
+# Simulation settings for using moveit_sim_controllers
+moveit_sim_hw_interface:
+  joint_model_group: L_leg
+  joint_model_group_pose: Home
+# Settings for ros_control_boilerplate control loop
+generic_hw_control_loop:
+  loop_hz: 300
+  cycle_time_error_threshold: 0.01
+# Settings for ros_control hardware interface
+hardware_interface:
+  joints:
+    - l_hip_roll_joint
+    - l_hip_yaw_joint
+    - l_hip_pitch_joint
+    - l_knee_pitch_joint
+    - l_ankle_pitch_joint
+    - l_ankle_roll_joint
+    - r_hip_roll_joint
+    - r_hip_yaw_joint
+    - r_hip_pitch_joint
+    - r_knee_pitch_joint
+    - r_ankle_pitch_joint
+    - r_ankle_roll_joint
+  sim_control_mode: 1  # 0: position, 1: velocity
+# Publish all joint states
+# Creates the /joint_states topic necessary in ROS
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+controller_list:
+  []
+l_leg_controller:
+  type: effort_controllers/JointEffortController
+  joints:
+    - l_hip_roll_joint
+    - l_hip_yaw_joint
+    - l_hip_pitch_joint
+    - l_knee_pitch_joint
+    - l_ankle_pitch_joint
+    - l_ankle_roll_joint
+  gains:
+    l_hip_roll_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    l_hip_yaw_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    l_hip_pitch_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    l_knee_pitch_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    l_ankle_pitch_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    l_ankle_roll_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+r_leg_controller:
+  type: effort_controllers/JointEffortController
+  joints:
+    - r_hip_roll_joint
+    - r_hip_yaw_joint
+    - r_hip_pitch_joint
+    - r_knee_pitch_joint
+    - r_ankle_pitch_joint
+    - r_ankle_roll_joint
+  gains:
+    r_hip_roll_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    r_hip_yaw_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    r_hip_pitch_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    r_knee_pitch_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    r_ankle_pitch_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    r_ankle_roll_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
