@@ -312,21 +312,19 @@
   <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
-<joint name="r_hip_yaw_joint" type="revolute">
+<joint name="r_hip_yaw_joint" type="continuous">
   <origin rpy="0 0 0" xyz="-0.0525 0.00805 -0.01975"/>
   <parent link="r_hip_roll_link_1"/>
   <child link="r_hip_yaw_link_1"/>
   <axis xyz="-0.0 -0.0 -1.0"/>
-  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
   <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
-<joint name="l_hip_yaw_joint" type="revolute">
+<joint name="l_hip_yaw_joint" type="continuous">
   <origin rpy="0 0 0" xyz="0.0525 0.00805 -0.01975"/>
   <parent link="l_hip_roll_link__1__1"/>
   <child link="l_hip_yaw_link_1"/>
   <axis xyz="-0.0 -0.0 -1.0"/>
-  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
   <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
