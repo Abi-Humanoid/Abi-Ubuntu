@@ -300,6 +300,7 @@
   <child link="r_hip_roll_link_1"/>
   <axis xyz="0.0 -1.0 0.0"/>
   <limit effort="100" lower="-0.349066" upper="0.174533" velocity="100"/>
+  <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
 <joint name="l_hip_roll_joint" type="revolute">
@@ -308,6 +309,7 @@
   <child link="l_hip_roll_link__1__1"/>
   <axis xyz="0.0 -1.0 0.0"/>
   <limit effort="100" lower="-0.174533" upper="0.349066" velocity="100"/>
+  <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
 <joint name="r_hip_yaw_joint" type="revolute">
@@ -316,6 +318,7 @@
   <child link="r_hip_yaw_link_1"/>
   <axis xyz="-0.0 -0.0 -1.0"/>
   <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+  <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
 <joint name="l_hip_yaw_joint" type="revolute">
@@ -324,20 +327,25 @@
   <child link="l_hip_yaw_link_1"/>
   <axis xyz="-0.0 -0.0 -1.0"/>
   <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+  <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
-<joint name="l_hip_pitch_joint" type="continuous">
+<joint name="l_hip_pitch_joint" type="revolute">
   <origin rpy="0 0 0" xyz="-0.0235 0.0 -0.024"/>
   <parent link="l_hip_yaw_link_1"/>
   <child link="l_hip_pitch_link__1__1"/>
   <axis xyz="-1.0 -0.0 -0.0"/>
+  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+  <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
-<joint name="r_hip_pitch_joint" type="continuous">
+<joint name="r_hip_pitch_joint" type="revolute">
   <origin rpy="0 0 0" xyz="-0.0235 0.0 -0.024"/>
   <parent link="r_hip_yaw_link_1"/>
   <child link="r_hip_pitch_link__1__1"/>
   <axis xyz="-1.0 -0.0 -0.0"/>
+  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+  <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
 <joint name="r_knee_pitch_joint" type="revolute">
@@ -346,6 +354,7 @@
   <child link="r_knee_pitch_link__1__1"/>
   <axis xyz="-1.0 -0.0 -0.0"/>
   <limit effort="100" lower="-1.919862" upper="0.174533" velocity="100"/>
+  <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
 <joint name="l_knee_pitch_joint" type="revolute">
@@ -354,6 +363,7 @@
   <child link="l_knee_pitch_link__1__1"/>
   <axis xyz="1.0 0.0 0.0"/>
   <limit effort="100" lower="-0.174533" upper="1.919862" velocity="100"/>
+  <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
 <joint name="r_ankle_pitch_joint" type="revolute">
@@ -362,6 +372,7 @@
   <child link="r_ankle_pitch_link__1__1"/>
   <axis xyz="-1.0 -0.0 -0.0"/>
   <limit effort="100" lower="-0.785398" upper="0.785398" velocity="100"/>
+  <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
 <joint name="l_ankle_pitch_joint" type="revolute">
@@ -370,6 +381,7 @@
   <child link="l_ankle_pitch_link__1__1"/>
   <axis xyz="1.0 -0.0 0.0"/>
   <limit effort="100" lower="-0.785398" upper="0.785398" velocity="100"/>
+  <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
 <joint name="l_ankle_roll_joint" type="revolute">
@@ -378,6 +390,7 @@
   <child link="l_ankle_roll_link__1__1"/>
   <axis xyz="-0.0 1.0 -0.0"/>
   <limit effort="100" lower="-0.174533" upper="0.785398" velocity="100"/>
+  <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
 <joint name="r_ankle_roll_joint" type="revolute">
@@ -386,6 +399,7 @@
   <child link="r_ankle_roll_link__1__1"/>
   <axis xyz="-0.0 1.0 -0.0"/>
   <limit effort="100" lower="-0.785398" upper="0.174533" velocity="100"/>
+  <dynamics damping="0.1" friction="0.0"/>
 </joint>
 
 </robot>
